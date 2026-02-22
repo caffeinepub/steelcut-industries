@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0;
+    /* Light mode: clean industrial workspace */
+    --background: 0.97 0.005 240;
+    --foreground: 0.2 0.01 250;
+    --card: 1 0 0;
+    --card-foreground: 0.2 0.01 250;
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0.01 250;
+    --primary: 0.45 0.12 250;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.25 0.02 250;
+    --secondary-foreground: 1 0 0;
+    --muted: 0.92 0.005 240;
+    --muted-foreground: 0.5 0.01 250;
+    --accent: 0.65 0.21 45;
+    --accent-foreground: 0.15 0.01 250;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1 0 0;
+    --border: 0.88 0.01 240;
+    --input: 0.92 0.005 240;
+    --ring: 0.45 0.12 250;
+    --chart-1: 0.45 0.12 250;
+    --chart-2: 0.65 0.21 45;
+    --chart-3: 0.25 0.02 250;
+    --chart-4: 0.5 0.15 200;
+    --chart-5: 0.6 0.18 280;
+  }
+
+  .dark {
+    /* Dark mode: industrial night shift */
+    --background: 0.15 0.01 250;
+    --foreground: 0.95 0.005 240;
+    --card: 0.2 0.015 250;
+    --card-foreground: 0.95 0.005 240;
+    --popover: 0.18 0.012 250;
+    --popover-foreground: 0.95 0.005 240;
+    --primary: 0.6 0.15 250;
+    --primary-foreground: 0.1 0.01 250;
+    --secondary: 0.3 0.025 250;
+    --secondary-foreground: 0.95 0.005 240;
+    --muted: 0.25 0.015 250;
+    --muted-foreground: 0.65 0.01 240;
+    --accent: 0.7 0.23 45;
+    --accent-foreground: 0.1 0.01 250;
+    --destructive: 0.6 0.24 25;
+    --destructive-foreground: 0.95 0.005 240;
+    --border: 0.3 0.02 250;
+    --input: 0.25 0.015 250;
+    --ring: 0.6 0.15 250;
+    --chart-1: 0.6 0.15 250;
+    --chart-2: 0.7 0.23 45;
+    --chart-3: 0.4 0.08 250;
+    --chart-4: 0.55 0.16 200;
+    --chart-5: 0.65 0.19 280;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.03em;
+  }
+  .font-mono-spec {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: 'tnum', 'zero';
+  }
+  
+  .diagonal-cut {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+  }
+  
+  .diagonal-cut-reverse {
+    clip-path: polygon(24px 0, 100% 0, 100% 100%, 0 100%, 0 24px);
+  }
+}
